@@ -1,8 +1,17 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { useState } from 'react';
 import ExpensesChart from '../components/ExpensesChart';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const Home: NextPage = () => {
+  const [loading, setLoading] = useState(true);
+
+  // Prototype loading state
+  setTimeout(() => {
+    setLoading(false);
+  }, 1600);
+
   return (
     <div>
       <Head>
@@ -12,7 +21,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex items-center justify-center min-h-screen bg-app-sand">
-        <ExpensesChart />
+        {loading && <LoadingSpinner />}
+        {!loading && <ExpensesChart />}
       </main>
     </div>
   );

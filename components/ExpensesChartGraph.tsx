@@ -6,7 +6,7 @@ const ExpensesChartGraph: React.FC = (props) => {
   const highest = Math.max(...chartData.map((item) => item.amount));
 
   return (
-    <div className="relative w-full flex justify-between gap-3">
+    <div className="relative w-full flex justify-between gap-3 pt-12">
       {chartData.map((item, index) => (
         <ExpensesChartGraphItem
           key={index}

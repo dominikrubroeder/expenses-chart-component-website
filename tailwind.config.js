@@ -20,6 +20,7 @@ module.exports = {
         fadeDown: 'fadeDown .6s ease-out forwards',
         fadeToRight: 'fadeToRight .6s ease-out forwards',
         fadeToLeft: 'fadeToLeft .6s ease-out forwards',
+        scale: 'scale .6s ease-out forwards',
       },
       keyframes: {
         growHeight: {
@@ -74,6 +75,18 @@ module.exports = {
           },
           '100%': {
             transform: 'translateX(0)',
+            opacity: '100%',
+            visibility: 'visible',
+          },
+        },
+        scale: {
+          '0%': {
+            transform: 'scale(0.7)',
+            opacity: '0%',
+            visibility: 'hidden',
+          },
+          '100%': {
+            transform: 'scale(1)',
             opacity: '100%',
             visibility: 'visible',
           },
