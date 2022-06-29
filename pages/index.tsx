@@ -1,11 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-import chartData from '../data';
+import ExpensesChart from '../components/ExpensesChart';
 
 const Home: NextPage = () => {
-  const highest = Math.max(...chartData.map((item) => item.amount));
-
   return (
     <div>
       <Head>
@@ -15,74 +12,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex items-center justify-center min-h-screen bg-app-sand">
-        <div className="max-w-sm w-full grid gap-4 p-4">
-          <header className="flex items-center gap-2 flex-wrap py-4 px-6 bg-app-orange rounded-xl z-10 opacity-0 invisible animate-fadeUp animation-delay-1000">
-            <div className="grid gap-1 flex-1 text-white">
-              <h6 className="text-xs">My balance</h6>
-              <h2 className="text-xl font-semibold">$921.48</h2>
-            </div>
-
-            <Image src="/images/logo.svg" width={60} height={40} alt="Logo" />
-          </header>
-
-          <div className="bg-white rounded-xl pb-8 pt-6 px-6 z-20">
-            <h2 className="font-semibold text-xl mb-1">
-              Spending – Last 7 days
-            </h2>
-
-            <div className="relative w-full flex justify-between gap-3">
-              {chartData.map((item, index) => (
-                <div key={index} className="group w-full">
-                  <p className="absolute left-0 top-0 grid gap-0 invisible opacity-0 transition-all group-hover:opacity-100 group-hover:visible">
-                    <span className="text-md leading-none">{item.amount}%</span>
-                    <span className="text-xs text-neutral-400">{item.day}</span>
-                  </p>
-                  <div className="text-center">
-                    <div
-                      className={`flex justify-end flex-col mb-2 h-40 w-full rounded-xl ${
-                        highest === item.amount
-                          ? 'group-hover:bg-app-teal/10'
-                          : 'group-hover:bg-app-orange/10'
-                      }`}
-                    >
-                      <div
-                        className={`${
-                          highest === item.amount
-                            ? 'bg-app-teal'
-                            : 'bg-app-orange'
-                        } rounded-xl transition-all animate-growHeight hover:scale-105`}
-                        style={{ height: `${item.amount}%` }}
-                      ></div>
-                    </div>
-                    <p className="text-xs text-neutral-400">{item.day}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <hr className="my-8 transition-all animate-growWidth" />
-
-            <div className="flex items-center justify-between flex-wrap gap-2">
-              <div>
-                <h6 className="text-neutral-400 text-xs opacity-0 invisible animate-fadeDown animation-delay-1000">
-                  Total this month
-                </h6>
-                <h1 className="font-bold text-3xl opacity-0 invisible animate-fadeUp animation-delay-1000">
-                  $478.33
-                </h1>
-              </div>
-
-              <div>
-                <div className="font-bold opacity-0 invisible animate-fadeToRight animation-delay-1000">
-                  +2.4%
-                </div>
-                <h6 className="text-neutral-400 text-xs opacity-0 invisible animate-fadeUp animation-delay-1000">
-                  from last month
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ExpensesChart />
       </main>
     </div>
   );
