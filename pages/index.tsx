@@ -10,7 +10,85 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>Hello, world!</main>
+      <main className="flex items-center justify-center min-h-screen bg-app-sand">
+        <div className="max-w-xs w-full grid gap-4">
+          <header className="flex items-center gap-2 py-4 px-6 bg-app-orange rounded-xl">
+            <div className="grid gap-1 flex-1 text-white">
+              <h6 className="text-xs">My balance</h6>
+              <h2 className="text-xl font-semibold">$921.48</h2>
+            </div>
+            <div className="shrink-0">Logo here</div>
+          </header>
+          <div className="bg-white rounded-xl py-4 px-6">
+            <h2 className="font-semibold text-lg">Spending – Last 7 days</h2>
+
+            <div className="w-full flex gap-2">
+              <div className="text-center w-12">
+                <div className="flex justify-end flex-col mb-2 h-40 w-full rounded-xl">
+                  <div className="bg-app-orange rounded-xl h-[20%]"></div>
+                </div>
+                <p>mon</p>
+              </div>
+
+              <div className="text-center w-12">
+                <div className="flex justify-end flex-col mb-2 h-40 w-full rounded-xl">
+                  <div className="bg-app-orange rounded-xl h-[40%]"></div>
+                </div>
+                <p>tue</p>
+              </div>
+
+              <div className="text-center w-12">
+                <div className="flex justify-end flex-col mb-2 h-40 w-full rounded-xl">
+                  <div className="bg-app-teal rounded-xl h-[70%]"></div>
+                </div>
+                <p>wed</p>
+              </div>
+
+              <div className="text-center w-12">
+                <div className="flex justify-end flex-col mb-2 h-40 w-full rounded-xl">
+                  <div className="bg-app-orange rounded-xl h-[35%]"></div>
+                </div>
+                <p>thu</p>
+              </div>
+
+              <div className="text-center w-12">
+                <div className="flex justify-end flex-col mb-2 h-40 w-full rounded-xl">
+                  <div className="bg-app-orange rounded-xl h-[30%]"></div>
+                </div>
+                <p>fri</p>
+              </div>
+
+              <div className="text-center w-12">
+                <div className="flex justify-end flex-col mb-2 h-40 w-full rounded-xl">
+                  <div className="bg-app-orange rounded-xl h-[60%]"></div>
+                </div>
+                <p>sat</p>
+              </div>
+
+              <div className="text-center w-12">
+                <div className="flex justify-end flex-col mb-2 h-40 w-full rounded-xl">
+                  <div className="bg-app-orange rounded-xl h-[33%]"></div>
+                </div>
+                <p>sun</p>
+              </div>
+            </div>
+
+            <hr className="my-8" />
+
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <div>
+                <h6 className="text-neutral-400 text-xs">Total this month</h6>
+                <h1 className="font-bold text-3xl">$478.33</h1>
+              </div>
+
+              <div>
+                <div className="font-bold">+2.4%</div>
+                <h6 className="text-neutral-400 text-xs">from last month</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   );
 };
